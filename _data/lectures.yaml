@@ -20,6 +20,42 @@
           url: https://aima.cs.berkeley.edu/global-index.html
           authors: Stuart Russell and Peter Norvig
 -
+  date: 2025-01-13
+  title: Simulated Environments and Reality
+  slides:
+  readings:
+        -
+          title: A Systematic Survey of Text Worlds as Embodied Natural Language Environments
+          url: https://aclanthology.org/2022.wordplay-1.1.pdf
+          authors: Peter A. Jansen
+        -
+          title: Action Castle
+          url: http://memento-mori.com/pdf/parsely-preview-n-play-edition
+          authors: Jared Sorensen
+-
+  date: 2025-01-15
+  title: How to Make a Simulation?
+  slides:
+  readings:
+        -
+          title: Intro to PDDL
+          url: https://fareskalaboud.github.io/LearnPDDL/
+          authors: Fares Alaboud 
+        -
+          title: Intro to Inform7
+          url: https://ganelson.github.io/inform-website/
+          authors: Graham Nelson
+        -
+          title: The Visible Zorker
+          url: https://blog.zarfhome.com/2025/01/the-visible-zorker
+          authors: Andrew Plotkin
+        -
+          authors: Jason Scott
+          url: https://www.youtube.com/watch?v=LRhbcDzbGSU
+          title: "GET LAMP: The Text Adventure Documentary"
+          length: 2 hours
+          optional: true
+-
   date: 2025-01-22
   title: HW0 Due
   type: homework
