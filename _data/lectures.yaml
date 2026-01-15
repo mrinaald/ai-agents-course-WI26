@@ -35,7 +35,7 @@
 -
   date: 2026-01-15
   title: How to Make a Simulation?
-  slides:
+  slides: how_to_make_a_simulation.pdf
   readings:
         -
           title: Intro to PDDL
@@ -56,6 +56,36 @@
           length: 2 hours
           optional: true
 -
-  date: 2026-01-22
+  date: 2026-01-20
   title: HW0 Due
   type: homework
+- 
+  date: 2026-01-20
+  title: Search for Planning in Simulations
+  slides: 
+  readings:
+        -
+          title: Intro to STRIPS
+          url: https://www.primaryobjects.com/2015/11/06/artificial-intelligence-planning-with-strips-a-gentle-introduction/
+          authors: Kory Becker
+        -
+          title: AIMA Chapter 11
+          url: https://aima.cs.berkeley.edu/newchap11.pdf
+          authors: Stuart Russell and Peter Norvig
+        -
+          title: RL Book Chapter 8.1, 8.9-8.11
+          url: http://incompleteideas.net/book/RLbook2020.pdf
+          authors: Rich Sutton and Andrew Barto
+-
+  date: 2026-01-22
+  title: Finalize Project Groups
+  type: deadline
+-
+  date: 2026-01-22
+  title: Classical Control, Pre-Deep Learning
+  slides: 
+  readings:
+        -
+          title: RL Book Chapter 4, 5
+          url: http://incompleteideas.net/book/RLbook2020.pdf
+          authors: Rich Sutton and Andrew Barto
