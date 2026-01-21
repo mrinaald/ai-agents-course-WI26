@@ -62,7 +62,7 @@
 - 
   date: 2026-01-20
   title: Search for Planning in Simulations
-  slides: 
+  slides: search_for_planning_in_simulations.pdf
   readings:
         -
           title: Intro to STRIPS
