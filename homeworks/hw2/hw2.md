@@ -36,7 +36,7 @@ You can download the materials for this assignment here:
 
 HW2 consists of two parts:
 - [Part 1: Implementing Q-Learning in TextWorld](https://github.com/pearls-lab/ai-agents-course-WI26/blob/main/homeworks/hw2/hw2_part1.ipynb) (50pts)
-- [Part 2: Implementing DQN in TextWorld]((https://github.com/pearls-lab/ai-agents-course-WI26/blob/main/homeworks/hw2/hw2_part2.ipynb)) (50pts)
+- [Part 2: Implementing DQN in TextWorld](https://github.com/pearls-lab/ai-agents-course-WI26/blob/main/homeworks/hw2/hw2_part2.ipynb) (50pts)
 
 Submissions should be done on [Gradescope]({{page.submission_link}}).
 
