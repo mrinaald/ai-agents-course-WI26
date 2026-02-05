@@ -139,3 +139,41 @@
   date: 2026-02-09
   title: Project Pitch Slide Decks Due
   type: deadline
+-
+  date: 2026-02-10
+  title: Attention and Language Modeling
+  slides: 
+  readings:
+        -
+          title: Attention is All You Need
+          url: https://arxiv.org/abs/1706.03762
+          authors: Vaswani et al.
+        -
+          title: The Illustrated Transformer
+          url: https://jalammar.github.io/illustrated-transformer/
+          authors: Jay Alammar
+        -
+          title: Language Models are Few Shot Learners
+          url: https://arxiv.org/abs/2005.14165
+          authors: Brown et al.
+-
+  date: 2026-02-12
+  title: RL for Language Agents Pt 1 (Online RL for NLP, RLHF)
+  slides: 
+  readings:
+        -
+          title: RL Book Chapter 13
+          url: http://incompleteideas.net/book/RLbook2020.pdf
+          authors: Rich Sutton and Andrew Barto
+        -
+          title: Is Reinforcement Learning (Not) for Natural Language Processing? Benchmarks, Baselines, and Building Blocks for Natural Language Policy Optimization
+          url: https://github.com/allenai/RL4LMs
+          authors: Ramamurthy*, Ammanabrolu* et al.
+        -
+          title: Training Language Models to Follow Instructions with Human Feedback
+          url: https://arxiv.org/abs/2203.02155
+          authors: Ouyang et al.
+-
+  date: 2026-02-17
+  title: HW2 Due
+  type: homework
