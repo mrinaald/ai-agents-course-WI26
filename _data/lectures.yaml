@@ -159,7 +159,7 @@
 -
   date: 2026-02-12
   title: RL for Language Agents Pt 1 (Online RL for NLP, RLHF)
-  slides: 
+  slides: rl_for_language_pt1.pdf
   readings:
         -
           title: RL Book Chapter 13
@@ -177,3 +177,42 @@
   date: 2026-02-17
   title: HW2 Due
   type: homework
+-
+  date: 2026-02-17
+  title: RL for Language Agents Pt 2 (Rewards and Closed Form Methods)
+  slides: 
+  readings:
+        -
+          title: Let's Verify Step by Step
+          url: https://arxiv.org/abs/2305.20050
+          authors: Lightman et al.     
+        -
+          title: Fine-Grained Human Feedback Gives Better Rewards for Language Model Training
+          url: https://arxiv.org/abs/2306.01693
+          authors: Wu et al.
+        -
+          title: Direct Preference Optimization Your Language Model is Secretly a Reward Model
+          url: https://arxiv.org/abs/2305.18290
+          authors: Rafailov et al.
+-
+  date: 2026-02-19
+  title: Prompt Optimization
+  slides: 
+  readings:
+        -
+          title: ReAct Synergizing Reasoning and Acting in Language Models
+          url: https://arxiv.org/abs/2210.03629
+          authors: Yao et al.
+        -
+          title: (RAG) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+          url: https://arxiv.org/abs/2005.11401
+          authors: Lewis et al.
+        -
+          title: Building Effective Agents
+          url: https://www.anthropic.com/research/building-effective-agents
+          authors: Anthropic
+        -
+          title: DsPy Compiling Declarative Language Model Calls into Self-Improving Pipelines
+          url: https://arxiv.org/abs/2310.03714
+          authors: Khattab et al.
+          optional: True
