@@ -180,7 +180,7 @@
 -
   date: 2026-02-17
   title: RL for Language Agents Pt 2 (Rewards and Closed Form Methods)
-  slides: 
+  slides: l_for_language_pt2.pdf
   readings:
         -
           title: Let's Verify Step by Step
@@ -216,3 +216,45 @@
           url: https://arxiv.org/abs/2310.03714
           authors: Khattab et al.
           optional: True
+  -
+  date: 2026-02-24
+  title: Neurosymbolic Tool Use Methods and Agent Reasoning
+  slides:
+  readings:
+        -
+          title: Behavior Cloned Transformers are Neurosymbolic Reasoners
+          url: https://arxiv.org/abs/2210.07382
+          authors: Wang et al.
+        -
+          title: LLM+P Empowering Large Language Models with Optimal Planning Proficiency
+          url: https://arxiv.org/abs/2304.11477
+          authors: Liu et al.
+        -
+          title: Gorilla Large Language Model Connected with Massive APIs
+          url: https://gorilla.cs.berkeley.edu/
+          authors: Patil et al.
+        -
+          title: PlanBench An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change
+          url: https://arxiv.org/abs/2206.10498
+          authors: Valmeekam et al.
+-
+  date: 2026-02-26
+  title: Agent Reasoning and Inference Time Methods
+  slides:
+  readings:
+        -
+          title: Why we think
+          url: https://lilianweng.github.io/posts/2025-05-01-thinking/
+          authors: Lilian Weng
+        -
+          title: Quiet-STaR Language Models Can Teach Themselves to Think Before Speaking
+          url: https://arxiv.org/abs/2403.09629
+          authors: Zelikman et al.
+        -
+          title: Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
+          url: https://arxiv.org/abs/2408.03314
+          authors: Snell et al.
+        -
+          title: Stream of Search (SoS) Learning to Search in Language
+          url: https://arxiv.org/abs/2404.03683
+          authors: Gandhi et al.
