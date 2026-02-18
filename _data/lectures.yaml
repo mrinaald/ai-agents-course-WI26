@@ -180,7 +180,7 @@
 -
   date: 2026-02-17
   title: RL for Language Agents Pt 2 (Rewards and Closed Form Methods)
-  slides: l_for_language_pt2.pdf
+  slides: rl_for_language_pt2.pdf
   readings:
         -
           title: Let's Verify Step by Step
