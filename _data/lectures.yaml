@@ -219,7 +219,7 @@
 -
   date: 2026-02-24
   title: Neurosymbolic Tool Use Methods and Agent Reasoning
-  slides:
+  slides: neurosymbolic_tool_use.pdf
   readings:
         -
           title: Behavior Cloned Transformers are Neurosymbolic Reasoners
