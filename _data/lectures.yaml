@@ -262,3 +262,51 @@
   date: 2026-03-03
   title: HW3 Due
   type: homework
+-
+  date: 2026-03-03
+  title: Multi-Agent Systems and Human-AI Collaboration
+  slides:
+  readings: 
+        -
+          title: LIGHT - A large-scale crowdsourced fantasy text game
+          url: https://parl.ai/projects/light
+          authors: Urbanek et al.
+        -
+          title: Generative Agents Interactive Simulacra of Human Behavior
+          url: https://arxiv.org/abs/2304.03442
+          authors: Park et al.
+        -
+          title: A Survey on Human-AI Teaming with Large Pre-Trained Models
+          url: https://arxiv.org/abs/2403.04931
+          authors: Vats et al.
+-
+  date: 2026-03-05
+  title: Agent Safety, Security, and Legality
+  slides:
+  readings:
+        -
+          title: Evaluating and Mitigating Discrimination in Language Model Decisions
+          url: https://arxiv.org/abs/2312.03689
+          authors: Tamkin et al.
+        -
+          title: Responsible AI Agents
+          url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5147666
+          authors: Desai and Riedl
+        -
+          title: Computing Optimization-Based Prompt Injections Against Closed-Weights Models By Misusing a Fine-Tuning API
+          url: https://arxiv.org/abs/2501.09798
+          authors: Labunets et al.
+        -
+          title: Measuring Progress on Scalable Oversight for Large Language Models
+          url: https://arxiv.org/abs/2211.03540
+          authors: Bowman et al.
+        -
+          title: Creativity Support in the Age of Large Language Models An Empirical Study Involving Emerging Writers
+          url: https://arxiv.org/abs/2309.12570
+          authors: Chakrabarty et al.
+          optional: true
+        -
+          title: Aligning to Social Norms and Values in Interactive Narratives
+          url: https://arxiv.org/abs/2205.01975
+          authors: Ammanabrolu et al.
+          optional: true
