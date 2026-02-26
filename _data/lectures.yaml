@@ -240,7 +240,7 @@
 -
   date: 2026-02-26
   title: Agent Reasoning and Inference Time Methods
-  slides:
+  slides: inf_scaling.pdf
   readings:
         -
           title: Why we think
