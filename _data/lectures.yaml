@@ -265,7 +265,7 @@
 -
   date: 2026-03-03
   title: Multi-Agent Systems and Human-AI Collaboration
-  slides:
+  slides: multi_agent.pdf
   readings: 
         -
           title: LIGHT - A large-scale crowdsourced fantasy text game
@@ -310,3 +310,9 @@
           url: https://arxiv.org/abs/2205.01975
           authors: Ammanabrolu et al.
           optional: true
+-
+  date: 2026-03-10
+  title: Final Project Presentations 1
+-
+  date: 2026-03-12
+  title: Final Project Presentations 2
