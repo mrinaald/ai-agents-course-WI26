@@ -282,7 +282,7 @@
 -
   date: 2026-03-05
   title: Agent Safety, Security, and Legality
-  slides:
+  slides: agent_safety.pdf
   readings:
         -
           title: Evaluating and Mitigating Discrimination in Language Model Decisions
