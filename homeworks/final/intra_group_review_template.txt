@@ -1,0 +1,63 @@
+On a scale of 1-10, please rate each of your group members on their overall contributions to the final project.
+
+A score of 1 means that:
+- They did not contribute to the project at all, did not attend any group meetings, etc.
+
+A score of 5 means that:
+- They participated in some group meetings but did not deliver on what they said they would.
+
+A score of 10 means that:
+- They were actively engaged throughout the project and delivered exactly what was initially promised.
+
+Your score for the final project out of 100 will be
+(base score) * (your average peer score) / 10
+
+Copy the template below into your text editor, fill it out, and upload the completed file as intra_group_review_template.txt to Gradescope.
+
+===========================================================
+===================== COPY BELOW ==========================
+===========================================================
+
+# Member 1
+Name:
+Email:
+Score:
+Explanation:
+
+# Member 2
+Name:
+Email:
+Score:
+Explanation:
+
+# Member 3
+Name:
+Email:
+Score:
+Explanation:
+
+# Member 4
+Name:
+Email:
+Score:
+Explanation:
+
+# Member 5
+Name:
+Email:
+Score:
+Explanation:
+
+# Member 6
+Name:
+Email:
+Score:
+Explanation:
+
+Now give yourself a score based on the same criteria and write down exactly what you personally contributed to this project. This will be used to calibrate your peer’s scores.
+
+# Myself
+Name:
+Email:
+Score:
+Explanation:

@@ -1,0 +1,71 @@
+You will be assigned to review the final presentations of the other 2 groups using the rubric below. Your review should evaluate how well each component is addressed and provide a short explanation for the score you give.
+
+
+# Rubric Categories
+
+1. Introduction: Who cares, tease results
+2. Related Work: Who else has done this (maybe even in the last couple of months)
+3. Methods: What did you propose and what did you end up actually doing? What didn’t work? Bad results are fine as long as you can analyze why
+4. Results: How well does this agent work? How much would you trust your results if your life (grade) depended on it?
+
+
+# Scoring Guide (per category)
+
+You may assign any real-valued score in the range [0, 2] based on the following rubric:
+
+0.0 — This component was not covered at all.
+0.5 — Component is covered but unclear, contains errors, seems auto-generated, or doesn’t align with the code.
+1.0 — Superficially addressed: mostly correct but missing key elements, comparisons, or depth.
+1.5 — Minimally acceptable: essential parts are covered with some clarity, but not in much detail.
+1.75 — Strong: feature-complete and well-explained. Negative results are discussed meaningfully, and the presentation is clear.
+2.0 — Exceptional: goes above and beyond in some way—e.g., thorough analysis, innovative methods, or high presentation quality.
+
+
+# Submission Instructions
+
+Copy the template below into your text editor, fill it out, and upload the completed file as `inter_group_review_template.txt` to Gradescope.
+
+===========================================================
+===================== COPY BELOW ==========================
+===========================================================
+
+# Review 1
+
+Team:
+
+1. Introduction
+score:
+explanation:
+
+2. Related Work
+score:
+explanation:
+
+3. Methods
+score:
+explanation:
+
+4. Results
+score:
+explanation:
+
+
+# Review 2
+
+Team:
+
+1. Introduction
+score:
+explanation:
+
+2. Related Work
+score:
+explanation:
+
+3. Methods
+score:
+explanation:
+
+4. Results
+score:
+explanation:
