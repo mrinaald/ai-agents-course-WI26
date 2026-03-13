@@ -3,10 +3,10 @@ You will be assigned to review the final presentations of the other 2 groups usi
 
 # Rubric Categories
 
-1. Introduction: Who cares, tease results
-2. Related Work: Who else has done this (maybe even in the last couple of months)
-3. Methods: What did you propose and what did you end up actually doing? What didn’t work? Bad results are fine as long as you can analyze why
-4. Results: How well does this agent work? How much would you trust your results if your life (grade) depended on it?
+1. Introduction: Who cares? Tease your results.
+2. Related Work: Who else has done this (maybe even in the last couple of months)?
+3. Methods: What did you propose and what did you end up actually doing? (Note: What didn’t work? Bad results are fine as long as you can analyze why!)
+4. Experimental Results: How well does this agent work? How much would you trust your results if your life (or grade) depended on it?
 
 
 # Scoring Guide (per category)
