@@ -23,11 +23,19 @@ You may assign any real-valued score in the range [0, 2] based on the following 
 
 # Submission Instructions
 
-Copy the template below into your text editor, fill it out, and upload the completed file as `inter_group_review_template.txt` to Gradescope.
+To receive your assigned teams, submit this template file with your name, email and PID to Gradescope as your initial submission. The autograder will then show a list of the teams you are assigned to review.
+
+For the final submission, complete your reviews in the template, and upload the completed file as `inter_group_review_template.txt` to Gradescope.
+
+IMPORTANT: Do NOT include any new lines (`\n`) in your response.
 
 ===========================================================
 ===================== COPY BELOW ==========================
 ===========================================================
+
+Your name:
+Your email:
+Your PID:
 
 # Review 1
 
