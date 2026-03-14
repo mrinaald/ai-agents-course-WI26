@@ -14,9 +14,13 @@ Your score for the final project out of 100 will be
 
 Copy the template below into your text editor, fill it out, and upload the completed file as intra_group_review_template.txt to Gradescope.
 
+IMPORTANT: Do NOT include any new lines (`\n`) in your response.
+
 ===========================================================
 ===================== COPY BELOW ==========================
 ===========================================================
+
+Team: 
 
 # Member 1
 Name:
