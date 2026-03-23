@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -90,17 +90,123 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    start = problem.getStartState()
+    dfs = util.Stack()
+    action_path = {}
+
+    dfs.push((None, None, start))
+
+    goal_state = None
+    while not dfs.isEmpty():
+        prev_state, action, state = dfs.pop()
+
+        if state in action_path:
+            continue
+
+        action_path[state] = (prev_state, action)
+
+        if problem.isGoalState(state):
+            goal_state = state
+            break
+
+        successors = problem.getSuccessors(state)
+        # print(f"State: {state} | Successors: {successors}")
+        for next_state, action, cost in successors:
+            if next_state not in action_path:
+                dfs.push((state, action, next_state))
+
+    # print(f"Goal state: {state} | {problem.isGoalState(state)}")
+    action_seq = []
+    state = goal_state
+    while True:
+        state, action = action_path[state]
+        if action is None:
+            break
+        action_seq.append(action)
+
+    # print(f"Action sequence: {action_seq[::-1]}")
+    return action_seq[::-1]
 
 def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    start = problem.getStartState()
+    bfs = util.Queue()
+    action_path = {}
+
+    bfs.push((None, None, start, 0))
+
+    goal_state = None
+    while not bfs.isEmpty():
+        prev_state, action, state, cost = bfs.pop()
+
+        if state in action_path and cost >= action_path[state][2]:
+            continue
+
+        action_path[state] = (prev_state, action, cost)
+
+        if problem.isGoalState(state):
+            goal_state = state
+            break
+
+        successors = problem.getSuccessors(state)
+        for next_state, action, c in successors:
+            if next_state in action_path and cost + c >= action_path[next_state][2]:
+                continue
+
+            bfs.push((state, action, next_state, cost + c))
+
+    # print(f"Goal state: {state} | {problem.isGoalState(state)}")
+    action_seq = []
+    state = goal_state
+    while True:
+        state, action, _ = action_path[state]
+        if action is None:
+            break
+        action_seq.append(action)
+
+    # print(f"Action sequence: {action_seq[::-1]}")
+    return action_seq[::-1]
 
 def uniformCostSearch(problem: SearchProblem) -> List[Directions]:
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    start = problem.getStartState()
+    pq = util.PriorityQueue()
+    action_path = {}
+
+    pq.push((None, None, start, 0), 0)
+
+    goal_state = None
+    while not pq.isEmpty():
+        prev_state, action, state, cost = pq.pop()
+        if state in action_path and cost >= action_path[state][2]:
+            continue
+
+        action_path[state] = (prev_state, action, cost)
+
+        if problem.isGoalState(state):
+            goal_state = state
+            break
+
+        successors = problem.getSuccessors(state)
+        for next_state, action, c in successors:
+            if next_state in action_path and cost + c >= action_path[next_state][2]:
+                continue
+
+            pq.push((state, action, next_state, cost + c), cost + c)
+
+    # print(f"Goal state: {state} | {problem.isGoalState(state)}")
+    action_seq = []
+    state = goal_state
+    while True:
+        state, action, _ = action_path[state]
+        if action is None:
+            break
+        action_seq.append(action)
+
+    # print(f"Action sequence: {action_seq[::-1]}")
+    return action_seq[::-1]
 
 def nullHeuristic(state, problem=None) -> float:
     """
@@ -112,7 +218,42 @@ def nullHeuristic(state, problem=None) -> float:
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directions]:
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    start = problem.getStartState()
+    pq = util.PriorityQueue()
+    action_path = {}
+
+    pq.push((None, None, start, 0), 0 + heuristic(start, problem))
+
+    goal_state = None
+    while not pq.isEmpty():
+        prev_state, action, state, cost = pq.pop()
+        if state in action_path and cost >= action_path[state][2]:
+            continue
+
+        action_path[state] = (prev_state, action, cost)
+
+        if problem.isGoalState(state):
+            goal_state = state
+            break
+
+        successors = problem.getSuccessors(state)
+        for next_state, action, c in successors:
+            if next_state in action_path and cost + c >= action_path[next_state][2]:
+                continue
+
+            pq.push((state, action, next_state, cost + c), cost + c + heuristic(next_state, problem))
+
+    # print(f"Goal state: {state} | {problem.isGoalState(state)}")
+    action_seq = []
+    state = goal_state
+    while True:
+        state, action, _ = action_path[state]
+        if action is None:
+            break
+        action_seq.append(action)
+
+    # print(f"Action sequence: {action_seq[::-1]}")
+    return action_seq[::-1]
 
 # Abbreviations
 bfs = breadthFirstSearch

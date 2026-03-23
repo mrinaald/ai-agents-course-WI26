@@ -328,6 +328,7 @@ class AStarFoodSearchAgent(SearchAgent):
         self.searchType = FoodSearchProblem
 
 
+# mrinaal = 0
 def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
     Your heuristic for the FoodSearchProblem goes here.
@@ -353,18 +354,78 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
+    # global mrinaal
+    # mrinaal += 1
+    # if mrinaal == 1:
+    #     print(problem.getStartState())
+    #     print(position)
+    #     print(foodGrid)
+    #     print(foodGrid.asList())
+    #     print(problem.walls)
+    #     print(problem.walls.count())
+    #     print(problem.walls.asList())
 
     # ################################
     # # Priority queue based
     # # Verdict: Too slow, and too much exploration
     # ################################
+    # food_cells = foodGrid.asList()
+    # if len(food_cells) == 0:
+    #     # goal state
+    #     return 0
+
+    # pq = util.PriorityQueue()
+    # dist = {}
+    # cost_to_reach_food = {}
+    # num_food_found = 0
+    # total_food = len(food_cells)
+
+    # pq.push((state, 0), 0)
+    # dist[position] = 0
+
+    # while pq and num_food_found < total_food:
+    #     state, curr_cost = pq.pop()
+    #     pos = state[0]
+    #     if foodGrid[pos[0]][pos[1]]:
+    #         if pos not in cost_to_reach_food:
+    #             num_food_found += 1
+    #             cost_to_reach_food[pos] = curr_cost
+    #         else:
+    #             cost_to_reach_food[pos] = min(cost_to_reach_food[pos], curr_cost)
+
+    #     successors = problem.getSuccessors(state)
+    #     for next_state, _, c in successors:
+    #         next_pos = next_state[0]
+    #         if next_pos in dist and curr_cost + c >= dist[next_pos]:
+    #             continue
+
+    #         dist[next_pos] = curr_cost + c
+    #         pq.push((next_state, curr_cost + c), curr_cost + c)
+
+    # return min(cost_to_reach_food.values())
 
     # ################################
     # # Simple manhatten distance based approach
     # # Verdict: with min(), explored < 15000 nodes
     # #          with average(), explored < 12000 nodes
     # ################################
+    # food_cells = foodGrid.asList()
+    # if len(food_cells) == 0:
+    #     # goal state
+    #     return 0
 
+    # manhattan_distances = [util.manhattanDistance(position, food_pos) for food_pos in food_cells]
+
+    # # return min(manhattan_distances)
+
+    # return sum(manhattan_distances) / len(manhattan_distances)
+
+    # # manhattan_distances.sort()
+    # # l = len(manhattan_distances)
+    # # if l % 2 == 1:
+    # #     return manhattan_distances[l // 2]
+    # # else:
+    # #     return (manhattan_distances[l // 2 - 1] + manhattan_distances[l // 2]) / 2
 
     ################################
     # Food Distance dp
@@ -434,8 +495,32 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
         do_bfs(cell, cell_dp, problem.walls, foodGrid.width, foodGrid.height)
         dp[cell] = cell_dp
 
+    # if "food_cells" not in problem.heuristicInfo:
+    #     # add all food cells in heuristicInfo
+    #     problem.heuristicInfo["food_cells"] = set(food_cells)
+
+    # removed_food_cells = list(problem.heuristicInfo["food_cells"] - set(food_cells))
+    # num_steps = 0
+    # for cell in removed_food_cells:
+    #     num_steps += get_steps(cell, position, problem.walls, foodGrid.width, foodGrid.height)
+
+    # if len(food_cells) != len(problem.heuristicInfo["food_cells"]):
+    #     # some food has been eaten, reset dp
+    #     # TODO: identify which food cell got removed
+    #     print(problem.heuristicInfo["food_cells"])
+    #     print(set(food_cells))
+    #     print(problem.heuristicInfo["food_cells"] - set(food_cells))
+    #     print()
+    #     removed_food_cell = list(problem.heuristicInfo["food_cells"] - set(food_cells))[0]
+
+    #     # TODO: reset dp
+    #     do_bfs(removed_food_cell, dp, problem.walls, foodGrid.width, foodGrid.height, is_negative_bfs=True)
+
+    #     problem.heuristicInfo["food_cells"].remove(removed_food_cell)
+
     h = 0
     for cell in food_cells:
+        # h += dp[cell][position[0]][position[1]]
         h += (dp[cell][position[0]][position[1]] / util.manhattanDistance(position, cell))
 
     # Factor of 0.8 found using hit and trial

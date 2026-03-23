@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -26,7 +26,7 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
     ========================================
 
     Note: The cartesian coordinate (x, y) of grid is:
-    
+
         (0, 0) (0, 1) (0, 2) ...
         (1, 0) (1, 1)
         (2, 0)
@@ -78,7 +78,7 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
         for dir, (dx, dy) in Actions._directionsAsList:
             if self.grid[x + dx][y - dy] != "%":
                 possible.append(dir)
-        
+
         return possible
 
     def getTransitionStatesAndProbs(self, state, action):
@@ -96,13 +96,13 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
             return []
 
         x, y = state
-        
+
         if self.grid[x][y] in [".", "G"]:
             termState = self.terminalState
             return [(termState, 1.0)]
 
         successors = []
-        
+
         northState = (self.__isAllowed(x,y-1) and (x,y-1)) or state
         westState = (self.__isAllowed(x-1,y) and (x-1,y)) or state
         southState = (self.__isAllowed(x,y+1) and (x,y+1)) or state
@@ -118,7 +118,7 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
             successors.append((eastState, 1-self.noise))
 
         successors = self.__aggregate(successors)
-        
+
         return successors
 
     def getReward(self, state, action, nextState):
@@ -128,10 +128,10 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
         Not available in reinforcement learning.
         """
         x, y = state
-        
+
         if self.grid[x][y] == ".": return 1
         elif self.grid[x][y] == "G": return -1
-        
+
         return self.livingReward
 
     def isTerminal(self, state):
@@ -162,7 +162,7 @@ class PacmanMDP(mdp.MarkovDecisionProcess):
 class ValueIterationAgent(Agent):
     """
         A ValueIterationAgent takes a Markov decision process
-        (see mdp.py) that is used to estimate Q-Values before 
+        (see mdp.py) that is used to estimate Q-Values before
         actually acting.
     """
     def __init__(self, mdp, discount = 0.9, iterations = 100):
@@ -190,7 +190,30 @@ class ValueIterationAgent(Agent):
           value iteration, V_k+1(...) depends on V_k(...)'s.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+
+        # V_{k+1} (s) = max_a sum_{s'} T(s, a, s') [ R(s, a, s') + gamma * V_k(s') ]
+
+        for _ in range(self.iterations):
+            V_k = self.values.copy()
+
+            for state in self.mdp.getStates():
+                self.values[state] = 0
+
+                Q_values = []
+                for ai, action in enumerate(self.mdp.getPossibleActions(state)):
+                    Q_value = 0
+
+                    for next_state, transition_prob in self.mdp.getTransitionStatesAndProbs(state, action):
+                        reward = self.mdp.getReward(state, action, next_state)
+                        Q_value += transition_prob * (reward + (self.discount * V_k[next_state]))
+
+                    Q_values.append(Q_value)
+
+                if Q_values:
+                    self.values[state] = max(Q_values)
+                # else:
+                #     self.values[state] = 0
+
 
     def getValue(self, state):
         """
@@ -204,7 +227,11 @@ class ValueIterationAgent(Agent):
           value function stored in self.values.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        Q_value = 0
+        for next_state, transition_prob in self.mdp.getTransitionStatesAndProbs(state, action):
+            reward = self.mdp.getReward(state, action, next_state)
+            Q_value += transition_prob * (reward + (self.discount * self.values[next_state]))
+        return Q_value
 
     def computeActionFromValues(self, state):
         """
@@ -216,7 +243,20 @@ class ValueIterationAgent(Agent):
           terminal state, you should return None.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        Q_values = []
+        possible_actions = self.mdp.getPossibleActions(state)
+        for ai, action in enumerate(possible_actions):
+            Q_value = 0
+            for next_state, transition_prob in self.mdp.getTransitionStatesAndProbs(state, action):
+                reward = self.mdp.getReward(state, action, next_state)
+                Q_value += transition_prob * (reward + (self.discount * self.values[next_state]))
+            Q_values.append(Q_value)
+
+        if not Q_values:
+            return None
+
+        best_action_index = Q_values.index(max(Q_values))
+        return possible_actions[best_action_index]
 
     def getPolicy(self, state):
         return self.computeActionFromValues(state)
